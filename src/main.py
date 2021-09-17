@@ -37,6 +37,18 @@ def create_board(display):
             if val:
                 pygame.draw.rect(display, COLORS["gray"], (col * square_w, row * square_h, square_w, square_h))
 
+def move_piece(piece):
+    return
+
+def turn():
+    return
+
+def win_con():
+    return
+
+def game_over():
+    return
+
 def main():
     pygame.init()
 
@@ -45,7 +57,9 @@ def main():
     running = True
     while running:
         # Frames
-        pygame.time.delay(FRAME_TIME)
+        pygame.time.delay(TICK_RATE)
+        # Game time
+        clock = pygame.time.Clock()
 
         for event in pygame.event.get():
 
@@ -53,7 +67,11 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
 
+            turn()
+            game_over() if win_con()
+
             pygame.display.update()
+            clock.tick(TICK_RATE)
 
     # Close window
     pygame.quit()
