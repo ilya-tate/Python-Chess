@@ -13,4 +13,4 @@ DISPLAY_NAME = "Chess"
 DISPLAY_ICON = "./assets/icon.png"
 
 # Time game takes to update
-FRAME_TIME = 60
+TICK_RATE = 60
